@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import {Navbar, NavbarBrand} from 'reactstrap';
 import Menu from './components/MenuComponent.js';
+import Header from './components/HeaderComponent.js';
+import Footer from './components/FooterComponent.js';
 import { DISHES } from './shared/dishes';
 
 
@@ -17,14 +18,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar dark color = "primary">
-          <div className="container">
-            <NavbarBrand href="/">
-              Mohit ka Fusion Dhabaa !
-            </NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <Menu dishes = {this.state.dishes}/>  {/*Menu : child and App: parent => availablr to props to menucomponent */}
+        <Footer />
       </div>
     );
   }
