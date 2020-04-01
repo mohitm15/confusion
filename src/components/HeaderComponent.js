@@ -13,7 +13,7 @@ class Header extends Component {
                 </NavbarBrand>
             </div>
             </Navbar>
-            <Jumbotron>
+            <Jumbotron fluid>
               <div className="container">
                   <div className="row row-header">
                       <div className="col-12 col-sm-6">
