@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Menu from './components/MenuComponent.js';
+import Home from './components/HomeComponent.js';
 import Header from './components/HeaderComponent.js';
 import Footer from './components/FooterComponent.js';
 import { DISHES } from './shared/dishes';
@@ -16,10 +18,22 @@ class App extends Component {
   }
 
   render() {
+
+    const HomePage = () => {
+      return (
+        < Home />
+      );
+    }
+    
     return (
       <div className="App">
         <Header />
-        <Menu dishes = {this.state.dishes}/>  {/*Menu : child and App: parent => availablr to props to menucomponent */}
+        <Switch>
+          <Route path='/home' component={HomePage}/>
+          <Route exact path= '/menu' component = {() => <Menu dishes = {this.state.dishes}/> } />
+          <Redirect to="/home" />
+        </Switch>
+        {/* <Menu dishes = {this.state.dishes}/>  Menu : child and App: parent => availablr to props to menucomponent */}
         <Footer />
       </div>
     );

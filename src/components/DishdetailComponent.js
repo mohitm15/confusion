@@ -14,7 +14,7 @@ class Dishdetail extends Component
                         <Card>
                             <CardImg width="100" src = {dish.image} alt = {dish.name}/>
                             <CardBody>
-                                <CardTitle>{ dish.name }</CardTitle>
+                                <CardTitle><h3>{ dish.name }</h3></CardTitle>
                                 <CardText>{ dish.description }</CardText>
                             </CardBody>
                         </Card>

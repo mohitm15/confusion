@@ -31,7 +31,7 @@ class Menu extends Component
                     <Card onClick = {() => this.onDishSelect(dish)}>
                         <CardImg width="100%" src = {dish.image} alt = {dish.name}/>
                         <CardImgOverlay>
-                            <CardTitle>{dish.name}</CardTitle>
+                            <CardTitle><h2>{dish.name}</h2></CardTitle>
                             <CardSubtitle>{dish.subdecs}</CardSubtitle>
                         </CardImgOverlay>
                     </Card>
