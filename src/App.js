@@ -4,7 +4,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Menu from './components/MenuComponent.js';
 import Home from './components/HomeComponent.js';
-import Contact from './components/ContactComponent.js'
+import Contact from './components/ContactComponent.js';
+import About from './components/AboutComponent.js';
 import Header from './components/HeaderComponent.js';
 import Footer from './components/FooterComponent.js';
 import { DISHES } from './shared/dishes';
@@ -50,6 +51,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path='/home' component={HomePage}/>
+          <Route path= '/about' component={About}/>
           <Route exact path= '/menu' component = {() => <Menu dishes = {this.state.dishes}/> } />
           <Route path='/menu/:dishId' component={DishWithId} />
           <Route exact path= '/contactus' component = {Contact} /> 
