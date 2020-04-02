@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, CardSubtitle} from 'reactstrap';
-import Dishdetail from './DishdetailComponent'
+import { Card, CardImg, CardImgOverlay, CardTitle, CardSubtitle, Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import Dishdetail from './DishdetailComponent';
+import { Link } from 'react-router-dom';
 
 
 class Menu extends Component 
@@ -43,6 +44,19 @@ class Menu extends Component
 
         return (
             <div className="container">
+                <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem>
+                            <Link to='/home'>Home</Link>
+                        </BreadcrumbItem>
+                        <BreadcrumbItem active>
+                            <Link to='/menu'>Menu</Link>
+                        </BreadcrumbItem>
+                    </Breadcrumb>
+                </div>
+                <div className="col-12">
+                    <h3>Menu</h3><hr />
+                </div>
                 <div className="row">
                     {menu}
                 </div>
