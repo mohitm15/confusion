@@ -1,6 +1,8 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+
 
 function About(props) {
 
@@ -71,14 +73,26 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
-                {/* <div className="col-12">
+                <div className="col-12">
                     <Media list>
-                        {leaders}
+                    <Media>
+                        <Media left middle href="#">
+                            <Media object src="#"  alt="Vikas" />
+                        </Media>
+                        <Media body className="pl-5">
+                            <Media heading>Vikas Khanna</Media>
+                            <p>Executive Chef</p>
+                            <p>Award winning three-star Michelin chef with wide International experience having 
+                                worked closely with whos-who in the culinary world, he specializes in creating
+                                mouthwatering Indo-Italian fusion experiences.
+                            </p>
+                        </Media>
+                        </Media>
                     </Media>
-                </div> */}
+                </div>
             </div>
         </div>
     );
 }
 
-export default About;    
+export default About;
