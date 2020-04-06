@@ -46,13 +46,14 @@ class Contact extends Component {
         event.preventDefault();
     }
 
-    validate(firstname, lastname, telnum, email) {
+    validate(firstname, lastname, telnum, email,message) {
 
         const errors = {
             firstname: '',
             lastname: '',
             telnum: '',
-            email: ''
+            email: '',
+            message:''
         };
 
         if (this.state.touched.firstname && firstname.length < 3)
@@ -71,6 +72,11 @@ class Contact extends Component {
             
         if (this.state.touched.email && email.split('').filter(x => x === '@').length !== 1) 
             errors.email = 'Email should contain a asterik';
+        
+        if (this.state.touched.message && message.length === 0)
+            errors.message = 'Should not be empty';
+        else if (this.state.touched.message && message.length >= 500)
+            errors.message = 'Message should be in 500 characters';
 
         return errors;
     }
@@ -85,7 +91,7 @@ class Contact extends Component {
 
     render() {
 
-        const errors = this.validate(this.state.firstname, this.state.lastname, this.state.telnum, this.state.email);
+        const errors = this.validate(this.state.firstname, this.state.lastname, this.state.telnum, this.state.email,this.state.message);
 
         return(
             <div className="container">
@@ -211,7 +217,11 @@ class Contact extends Component {
                                     <Input type="textarea" id="message" name="message"
                                         rows="12"
                                         value={this.state.message}
-                                        onChange={this.handleInputChange}></Input>
+                                        valid = {errors.message === ''}
+                                        invalid = {errors.message !== ''}
+                                        onBlur={this.handleBlur('message')}
+                                        onChange={this.handleInputChange} />
+                                    <FormFeedback>{errors.message}</FormFeedback>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
