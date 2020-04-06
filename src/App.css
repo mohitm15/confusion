@@ -11,6 +11,7 @@
     padding: 50px 0px 50px 0px;
     border-bottom: 1px ridge;
     min-height:400px;
+    color: black;
 }
 
 .footer{
@@ -37,7 +38,7 @@ address{
     background-color: #07B9AE;
 }
 
-.breadcrumb {
+.breadcrumb{
     background-color: #A2E1E1;
     margin-top: 3rem;
 }
