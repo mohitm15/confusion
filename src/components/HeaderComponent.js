@@ -113,7 +113,7 @@ class Header extends Component {
                             <Label check>
                                 <Input type="checkbox" name="remember"
                                 innerRef={(input) => this.remember = input} />
-                                Remenber Me
+                                Remember Me
                             </Label>
                         </FormGroup>
                         <Button type="submit" value="submit" className="bg-success"
