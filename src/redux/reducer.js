@@ -13,5 +13,6 @@ export const initialState = {
 
 //reducer function (pure function), takes actions+previous state as input
 export const Reducer = (state = initialState, action) => {
+    //alert("The current state is " + state);
     return state; //just returning state currently
 };
