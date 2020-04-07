@@ -216,6 +216,7 @@ class Contact extends Component {
                                 <Col md={10}>
                                     <Input type="textarea" id="message" name="message"
                                         rows="12"
+                                        placeholder = "Shit Here !"
                                         value={this.state.message}
                                         valid = {errors.message === ''}
                                         invalid = {errors.message !== ''}

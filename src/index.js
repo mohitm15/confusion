@@ -8,12 +8,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter} from 'react-router-dom';
+import { Provider } from 'react-redux'; // provide store to all components
+//to make store available to all componnets
+import { ConfigureStore } from './redux/configureStore';
+
+const store = ConfigureStore(); // store is available
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
+    <Provider store={store}> 
+      <BrowserRouter>
+        <App />
       </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
