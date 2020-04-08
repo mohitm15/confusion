@@ -159,7 +159,7 @@ class Contact extends Component {
                                         model=".email"
                                         show="touched"
                                         messages={{
-                                            required: 'Required',
+                                            required: 'Required:',
                                             validEmail: 'Invalid Email Address'
                                         }}
                                      />
@@ -200,7 +200,7 @@ class Contact extends Component {
                                         model = ".message"
                                         show="touched"
                                         messages = {{
-                                            required: 'Required',
+                                            required: 'Required:',
                                             minLength: 'Must be greater than 1 character',
                                             maxLength: 'Must be less than 500 characters'
                                         }}
