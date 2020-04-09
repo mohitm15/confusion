@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'; //funcyion used for connecting component with redux store
+import { addComment } from './redux/ActionCreators';
 
 import Menu from './components/MenuComponent.js';
 import Home from './components/HomeComponent.js';
@@ -20,6 +21,12 @@ const mapStateToProps = state => {
       leaders: state.leaders
     }
 }
+
+const mapDispatchToProps = dispatch => ({
+  
+  addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment))
+
+});
 
 class App extends Component {
   
@@ -40,6 +47,7 @@ class App extends Component {
         return (
           <Dishdetail dish = {this.props.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
             comments = {this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))[0]}
+            addComment={this.props.addComment}
           />
         );
     }
@@ -63,4 +71,4 @@ class App extends Component {
 }
 
 //connecting app component to redux store
-export default withRouter(connect(mapStateToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

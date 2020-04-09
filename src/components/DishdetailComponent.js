@@ -29,8 +29,8 @@ class Dishdetail extends Component
     }
 
     handleSubmit(values) {
-        console.log("Current State is: " + JSON.stringify(values));
-        alert("Current State is: " + JSON.stringify(values));	        
+        alert("Value ADDDED IN PROGRESS !")
+        //this.props.addComment(this.props.dishId,values.rating,values.author,values.comment);
         //event.preventDefault();	
     }	    
     
@@ -81,6 +81,7 @@ class Dishdetail extends Component
                                     </div>
                                 )
                             })}
+                            
                             <Button outline="success" onClick={this.toggleModal}>
                                 <span className="fa fa-pencil fa-lg"> Submit Comment</span>
                             </Button>
