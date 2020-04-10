@@ -4,6 +4,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'; //funcyion used for connecting component with redux store
 import { addComment, fetchDishes } from './redux/ActionCreators';
 import { actions } from 'react-redux-form';
+import { TransitionGroup, CSSTransition} from 'react-transition-group'
 
 import Menu from './components/MenuComponent.js';
 import Home from './components/HomeComponent.js';
@@ -65,14 +66,18 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Switch>
-          <Route path='/home' component={HomePage}/>
-          <Route path= '/about' component={About}/>
-          <Route exact path= '/menu' component = {() => <Menu dishes = {this.props.dishes}/> } />
-          <Route path='/menu/:dishId' component={DishWithId} />
-          <Route exact path='/contactus' component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
-          <Redirect to="/home" />
-        </Switch>
+        <TransitionGroup> 
+          <CSSTransition key={this.props.location.key} className="page" timeout={300}>
+            <Switch location={this.props.location}>
+              <Route path='/home' component={HomePage}/>
+              <Route path= '/about' component={About}/>
+              <Route exact path= '/menu' component = {() => <Menu dishes = {this.props.dishes}/> } />
+              <Route path='/menu/:dishId' component={DishWithId} />
+              <Route exact path='/contactus' component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
+              <Redirect to="/home" />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
         {/* <Menu dishes = {this.state.dishes}/>  Menu : child and App: parent => availablr to props to menucomponent */}
         <Footer />
       </div>
