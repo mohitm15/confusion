@@ -67,7 +67,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <TransitionGroup> 
-          <CSSTransition key={this.props.location.key} className="page" timeout={300}>
+          <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
             <Switch location={this.props.location}>
               <Route path='/home' component={HomePage}/>
               <Route path= '/about' component={About}/>

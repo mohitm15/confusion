@@ -1,5 +1,6 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
+import { Fade, Stagger } from 'react-animation-components';
 import { Link } from 'react-router-dom';
 
 
@@ -74,8 +75,10 @@ function About(props) {
                     <h2>Corporate Leadership</h2>
                 </div>
                 <div className="col-12">
+                    <Stagger in>
                     <Media list>
                     <Media>
+                        <Fade in>
                         <Media left middle href="#">
                             <Media object src="#"  alt="Vikas" />
                         </Media>
@@ -87,8 +90,10 @@ function About(props) {
                                 mouthwatering Indo-Italian fusion experiences.
                             </p>
                         </Media>
+                        </Fade>
                         </Media>
                     </Media>
+                    </Stagger>
                 </div>
             </div>
         </div>
