@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardText, CardImg, CardBody, CardTitle, CardSubtitle,Jumbotron } from 'reactstrap';
+import { FadeTransform } from 'react-animation-components';
 import { Loading } from './LoadingComponent';
 
 
@@ -16,15 +17,16 @@ function RenderCard({item, isLoading, errMess}) {
     }
     else
         return(
-
-            <Card height="45rem">
-                <CardImg src={item.image} alt={item.name} style={{ height:"20rem", width:"100%" }} />
-                <CardBody style={{ backgroundColor:'#C8EAEA'}}> 
-                    <CardTitle><h3>{item.name}</h3></CardTitle>
-                    {item.designation ? <CardSubtitle><h5>{item.designation}</h5></CardSubtitle> : null }
-                    <CardText>{item.description}</CardText>
-                </CardBody>
-            </Card>
+            <FadeTransform in transformProps={{ exitTransform: 'scale(0.5) translateY(-50%)' }}>
+                <Card height="45rem">
+                    <CardImg src={item.image} alt={item.name} style={{ height:"20rem", width:"100%" }} />
+                    <CardBody style={{ backgroundColor:'#C8EAEA'}}> 
+                        <CardTitle><h3>{item.name}</h3></CardTitle>
+                        {item.designation ? <CardSubtitle><h5>{item.designation}</h5></CardSubtitle> : null }
+                        <CardText>{item.description}</CardText>
+                    </CardBody>
+                </Card>
+            </FadeTransform>
 
         );
 }
