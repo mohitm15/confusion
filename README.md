@@ -32,6 +32,19 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ![screencapture-localhost-3000-contactus-2020-04-07-01_31_02](https://user-images.githubusercontent.com/35539313/78599757-50c4d000-786f-11ea-9bca-68ab5dbfca7e.png)
 
+-----
+
+## Logger Information
+
+### State Comparison after applying following actions
+
+**Action type; Add dishes**
+![Screenshot from 2020-04-10 08-53-05](https://user-images.githubusercontent.com/35539313/78959766-98ff1f00-7b09-11ea-92d9-6456cca37472.png)
+
+
+**Action type; dishes Loading**
+![Screenshot from 2020-04-10 08-53-36](https://user-images.githubusercontent.com/35539313/78959774-9bfa0f80-7b09-11ea-995a-3de4d2358575.png)
+
 
 
 
